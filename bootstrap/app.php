@@ -24,9 +24,6 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
     })
-    ->withEvents(discover: [
-        __DIR__.'/../app/Events' => __DIR__.'/../app/Actions',
-    ])
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (NotFoundHttpException $e, Request $request) {
             if ($request->expectsJson()) {
